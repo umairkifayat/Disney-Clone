@@ -40,3 +40,21 @@ videocaerd.forEach((item) => {
 })
 // end video function 
 
+
+// card slider function start 
+let cardContainers= [...document.querySelectorAll('.movie_container')];
+let prebtn = [...document.querySelectorAll('.pre-btn')];
+let nxtbtn = [...document.querySelectorAll('.nxt-btn')];
+
+cardContainers.forEach((item,i)=>{
+  let comtainerDimensions = item.getBoundingClientRect()
+  let containerwidth = comtainerDimensions.width
+
+  nxtbtn[i].addEventListener('click',()=>{
+item.scrollLeft+= containerwidth-200
+  })
+  prebtn[i].addEventListener('click',()=>{
+    item.scrollLeft-= containerwidth+200
+      })
+})
+// card slider function end 
